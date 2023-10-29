@@ -19,7 +19,6 @@
         </li>
 </ul>
 <head>
-
 <!-- Latest compiled and minified CSS -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 
@@ -28,28 +27,80 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<title>Joshua's Portfolio</title>
+<title>Self Portrait</title>
 </head>
-
 <body>
 <div class="container-fluid">
+<h1>Self Portrait</h1>
 
-<h1>Welcome to my World</h1>
-<p>Here is some of the best work that I'm most proud of. Please Check it out!</p>
+<div>
 
-<a href="drainblazor46.github.io/netart/index.html">
-<img src="Net Art2.png" class="img-fluid mx-auto d-block rounded" alt="Pokemon Journey">
-</a>
+<iframe src="selfie/index.html" class="mx-auto d-block" height="604" width="604" title="selfie">
+</iframe>
 
-<img src="glitchedshib.png" class="img-fluid mx-auto d-block rounded" alt="Shiba Inu" width="600" height="450">
-
-<img src="fall76.png" class="img-fluid mx-auto d-block rounded" alt="Fallout76" width="600" height="450">
-
-<img src="glitchwars.jpg" class="img-fluid mx-auto d-block rounded" alt="star wars" width="600" height="450">
-
-<div class="container-fluid mt-3">
- 
 </div>
+
+<p>Code for my self portrait</p>
+
+<pre>
+
+function setup() {
+  createCanvas(600, 600);
+}
+
+function draw() {
+background(212, 149, 81);
+fill(255, 0, 0);
+ellipse(300, 550, 250, 275); //body
+rect(385, 505, 65, 95); //right arm
+rect(150, 505, 65, 95); //right arm
+fill(252, 217, 148); //skintone
+ellipse(300, 250, 300, 375); //mah head
+fill(0, 0, 0); //eyeball color
+ellipse(355, 220, 70, 45); 
+ellipse(245, 220, 70, 45);
+fill(255, 255, 255); //eye color
+ellipse(355, 220, 55, 35); 
+ellipse(245, 220, 55, 35);
+fill(20, 20, 20); //iris color
+ellipse(355, 220, 30, 35); 
+ellipse(245, 220, 30, 35);
+fill(0, 0, 0); //eye color
+ellipse(355, 220, 7, 7);
+ellipse(245, 220, 7, 7);
+fill(72, 76, 88); //headphone color
+ellipse(150, 250, 30, 100);
+ellipse(450, 250, 30, 100);
+ellipse(475, 250, 60, 115);
+ellipse(125, 250, 60, 115);
+rect(125, 100, 30, 150);
+rect(445, 100, 30, 150);
+rect(155, 70, 30, 150);
+rect(415, 70, 30, 150);
+rect(185, 40, 30, 150);
+rect(385, 40, 30, 150);
+rect(215, 15, 30, 175);
+rect(355, 15, 30, 125);
+rect(245, 10, 30, 175);
+rect(325, 10, 30, 175);
+rect(275, 10, 30, 150);
+rect(295, 10, 30, 150);
+fill(0, 0, 0);
+rect(255, 350, 90, 15);
+rect(300, 275, 5, 25);
+ellipse(300, 390, 15, 10);
+noFill();
+stroke(0, 0, 0);
+strokeWeight(4);
+curve(275, 275, 125, 250, 300, 390, 1350, 350); //controls the width and height of the mic
+
+}
+</pre>
+
+<div class="mt-5 p-4 bg-dark text-white text-center">
+	<p>Footer</p>
+</div>
+
 </body>
 </html>
 
