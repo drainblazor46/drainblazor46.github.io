@@ -79,43 +79,42 @@ function newkeyChoice(toolChoice) { //toolchoice is the key that was pressed
   // just make sure each key option has the a stroke or fill and then what type of 
   // graphic function
 
- if (toolChoice == '1' ) {  // first tool
+ if (toolChoice == '1' ) {  // Yellow 
     noStroke(0);
     fill(255, 243, 55);
     rect(mouseX, mouseY, 50, 50);
-  } else if (toolChoice == '2') { // second tool
+  } else if (toolChoice == '2') { // Sky Blue
     fill(16, 255, 243);
     ellipse(mouseX, mouseY, 30, 30);
-  } else if (toolChoice == '3') { // third tool
+  } else if (toolChoice == '3') { // Apricot
     noStroke(0);
     fill(251, 184, 101);
     ellipse(mouseX, mouseY, 15, 15);
-  } else if (toolChoice == '4') {
+  } else if (toolChoice == '4') { //Gray
     noStroke(0);
     fill(161, 157, 152);
     ellipse(mouseX, mouseY, 50, 50);
-  } else if (key == '5') { // this tool calls a function
+  } else if (key == '5') { // Brown
     fill(0, 0, 255);
     testbox(100, 59, 0);
  // make testbox do something!
- //   line(mouseX, mouseY, pmouseX, pmouseY);
-  } else if (toolChoice == '6') {
+ //   line(mouseX, mouseY, pmouseX, pmouseY); 
+  } else if (toolChoice == '6') { //Rectangle Brown
 
     stroke(200);
     rect(mouseX, mouseY, 100, 50);
-  } else if (toolChoice == '7') {
+  } else if (toolChoice == '7') { Grass Green
     noStroke(0);
     fill(100, 200, 100);
     rect(mouseX, mouseY, 20, 20);
-  } else if (toolChoice == '8') {
-
+  } else if (toolChoice == '8') { //Fading Orange
     fill(300, 100, 0, 80);
     rect(mouseX, mouseY, 20, 20);
-  } else if (toolChoice == '9') {
+  } else if (toolChoice == '9') { //slightly bigger Fading Orange
 
     fill(300, 100, 0, 80);
     rect(mouseX, mouseY, 40, 40);
-  } else if (toolChoice == '0') {
+  } else if (toolChoice == '0') { //Rainbow
     colorMode(HSB);
     fill(mouseX, mouseY/600*255, 150);
     ellipse(mouseX, mouseY, 20, 20);
