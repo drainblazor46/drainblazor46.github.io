@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<html>
+<ul class="nav">
+ <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+ <li class="nav-item"><a class="nav-link" href="glitchart.html">Glitch Art</a></li>
+ <li class="nav-item"><a class="nav-link" href="mashupart.html">Mashup Art</a></li>
+ <li class="nav-item"><a class="nav-link" href="minecraftart.html">Minecraft Art</a></li>
+ <li class="nav-item"><a class="nav-link" href="3dprint.html">3D Print</a></li>
+ <li class="nav-item"><a class="nav-link" href="netart.html">Net Art</a></li>
+ <li class="nav-item"><a class="nav-link" href="p5js-selfie.html">Self Portrait</a></li>
+ <li class="nav-item"><a class="nav-link" href="diyphotoshop.html">DIY Photoshop</a></li>
+  <li class="nav-item"><a class="nav-link" href="game.html">Game/Interaction</a></li>
+ <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="personalwork.html" role="button" data-bs-toggle="dropdown">Personal Work</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="3dmodelsanimations.html">3D Models/Animations</a></li>
+            <li><a class="dropdown-item" href="photography.html">Photography</a></li>
+            <li><a class="dropdown-item" href="drawings.html">Drawings</a></li>
+          </ul>
+        </li>
+<li class="nav-item"><a class="nav-link" href="artiststatement.html">Artist Statement</a></li>
+</ul>
+<head>
+<!-- Latest compiled and minified CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Latest compiled JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>p5js game</title>
+</head>
+<body>
+<div class="container-fluid">
+<h1>p5js Game</h1>
+
+<div>
+
+<iframe src="game2023/index.html" class="mx-auto d-block" height="715" width="1495" title="DIY Photoshop">
+</iframe>
+
+</div>
+
+<p>Code for my p5js gamw</p>
+
+<pre>
+var ballx = 300;
+var bally = 300;
+var ballSize = 40;
+var score = 0;
+var gameState = "L1";
+let timer = 5
+
+function setup() {
+createCanvas(600, 600);
+  textAlign(CENTER);
+  noStroke(0);
+  textSize(20);
+  text(timer, width/2, height/2);
+} // end of setup
+
+function draw() {
+background(200);
+ if(gameState == "L1"){
+   levelOne();
+ }
+ if(gameState == "L2"){
+   levelTwo();
+ }
+ if(gameState == "L3"){
+   levelThree();
+ }
+text(("Score: " + score),width/2,40);
+text(("Timer: " + timer), width/2, 20);
+} // end of draw
+
+function levelOne(){
+  text("Level 1", width/2, height-20);
+  var distToBall = dist(ballx, bally, mouseX, mouseY);
+  if(distToBall < ballSize/2){
+    ballx = random(width);
+    bally = random(height);
+    score = score + 1;
+  }
+  if(frameCount % 60 == 0 && timer > 0){
+    timer --;
+  }
+  if (timer == 0) {
+    text("GAME OVER", width/2, height*0.7);
+  }
+  if(score>= 5){
+    timer = timer + 5;
+    gameState = "L2";
+  }
+  line(ballx, bally, mouseX, mouseY);
+  ellipse(ballx, bally, ballSize);
+  
+} // end of level 1 ===========================================================================
+
+function levelTwo(){
+  background(200, 100, 0);
+  text("Level 2", width/2, height-20);
+  var distToBall = dist(ballx, bally, mouseX, mouseY);
+  if(distToBall < ballSize/2){
+    ballx = random(width);
+    bally = random(height);
+    score = score + 1;
+  }
+  if(frameCount % 60 == 0 && timer > 0){
+    timer --;
+  }
+  if (timer == 0) {
+    text("GAME OVER", width/2, height*0.7);
+  }
+      if(score>= 10){
+      timer = timer + 5;
+      gameState = "L3";
+    }
+  line(ballx, bally, mouseX, mouseY);
+  ellipse(ballx, bally, ballSize);
+  
+} // end of level 2 ===========================================================================
+
+function levelThree(){
+  background(0, 100, 200);
+  text("Level 3", width/2, height-20);
+  var distToBall = dist(ballx, bally, mouseX, mouseY);
+  if(distToBall < ballSize/2){
+    ballx = random(width);
+    bally = random(height);
+    score = score + 1;
+    ballSize = ballSize - 5;
+  }
+  if(frameCount % 60 == 0 && timer > 0){
+    timer --;
+  }
+  if (timer == 0) {
+    text("GAME OVER", width/2, height*0.7);
+  }
+  if(score>= 15){
+   // timer = timer + 5;
+      background(random(255));
+    }
+  line(ballx, bally, mouseX, mouseY);
+  ellipse(ballx, bally, ballSize);
+  
+} // end of level 3 ===========================================================================
+</pre>
+
+<div class="mt-5 p-4 bg-dark text-white text-center">
+	<p>Footer</p>
+</div>
+
+</body>
+</html>
+
+
