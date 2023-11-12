@@ -4,6 +4,8 @@ var ballSize = 40;
 var score = 0;
 var gameState = "L1";
 let timer = 5
+let bg;
+let y = 0;
 var img, img2, img3; 
 
 function preload() {
@@ -12,7 +14,7 @@ function preload() {
 // you can link to an image on your github account
   img = loadImage('https://drainblazor46.github.io/carltondance.gif');
   img2 = loadImage('https://drainblazor46.github.io/nyancat.gif');
-  img3 = loadImage('https://drainblazor46.github.io/rockeyebrow.gif');  
+  img3 = loadImage('https://drainblazor46.github.io/rockeyebrow.gif'); 
 }
 function setup() {
 createCanvas(600, 600);
@@ -20,11 +22,13 @@ createCanvas(600, 600);
   noStroke(0);
   textSize(20);
   text(timer, width/2, height/2);
+  bg = loadImage('https://drainblazor46.github.io/mememaster.jpg');
 } // end of setup
 
 function draw() {
-background(200);
- if(gameState == "L1"){
+  background(bg);
+    stroke(226, 204, 0);
+   if(gameState == "L1"){
    levelOne();
  }
  if(gameState == "L2"){
@@ -34,11 +38,11 @@ background(200);
    levelThree();
  }
  if (gameState=="win"){
-     text("You Won", width/2, height-20);
-  }
-
+     text("You are officially the Meme Master", width/2, height*0.7);  
+   }
 text(("Score: " + score),width/2,40);
 text(("Timer: " + timer), width/2, 20);
+
 } // end of draw
 
 function levelOne(){
@@ -59,7 +63,7 @@ function levelOne(){
     timer = timer + 5;
     gameState = "L2";
   }
-  line(ballx, bally, mouseX, mouseY);
+  // line(ballx, bally, mouseX, mouseY);
   // ellipse(ballx, bally, ballSize);
   
     image(img, ballx-ballSize/2, bally-ballSize/2, ballSize, ballSize);
@@ -68,7 +72,6 @@ function levelOne(){
 } // end of level 1 ===========================================================================
 
 function levelTwo(){
-  background(200, 100, 0);
   text("Level 2", width/2, height-20);
   var distToBall = dist(ballx, bally, mouseX, mouseY);
   if(distToBall < ballSize/2){
@@ -94,7 +97,6 @@ function levelTwo(){
 } // end of level 2 ===========================================================================
 
 function levelThree(){
-  background(0, 100, 200);
   text("Level 3", width/2, height-20);
   var distToBall = dist(ballx, bally, mouseX, mouseY);
   if(distToBall < ballSize/2){
@@ -103,22 +105,18 @@ function levelThree(){
     score = score + 1;
     ballSize = ballSize - 2;
   }
-  if(frameCount % 60 == 0 && timer > 0){
+if(frameCount % 60 == 0 && timer > 0){
     timer --;
   }
   if (timer == 0) {
     text("GAME OVER", width/2, height*0.7);
   }
-  if(score>= 15){
-    // timer = timer + 5;
-      background(120);
-    }
-  line(ballx, bally, mouseX, mouseY);
-   ellipse(ballx, bally, ballSize);
-  
-    image(img3, ballx-ballSize/2, bally-ballSize/2, ballSize, ballSize);
-} 
-if(score>25){
+  if(score>=20){
 // level 4
   gameState = "win";
 }
+  // line(ballx, bally, mouseX, mouseY);
+  // ellipse(ballx, bally, ballSize);
+  
+    image(img3, ballx-ballSize/2, bally-ballSize/2, ballSize, ballSize);
+} 
